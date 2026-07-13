@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Lexicon | Grammar & Usage Dictionary</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="dictionary-card">
+        <header>
+            <h1><i class="fa-solid fa-gilded"></i> Golden Lexicon</h1>
+            <p>Explore meanings, noun composition, and usage</p>
+        </header>
+
+        <div class="search-container">
+            <input type="text" id="word-input" placeholder="Enter an English word..." autocomplete="off">
+            <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+
+        <div class="results-area" id="results-area">
+            <div class="welcome-state" id="welcome-state">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <p>Type a word above to see its translation, grammar, noun classification, and examples!</p>
+            </div>
+
+            <div class="loading-state" id="loading-state">
+                <div class="gold-spinner"></div>
+                <p>Gathering definitions...</p>
+            </div>
+
+            <div class="content-state" id="content-state">
+                <div class="word-bar">
+                    <div>
+                        <h2 id="display-word">Word</h2>
+                        <div class="tag-container">
+                            <span id="grammar-pos">noun</span>
+                            <span id="noun-composition" class="comp-tag">Countable</span>
+                        </div>
+                    </div>
+                    <button id="audio-btn" class="audio-btn"><i class="fa-solid fa-volume-high"></i></button>
+                    <audio id="pronunciation-audio" src=""></audio>
+                </div>
+
+                <div class="data-box section-urdu">
+                    <span class="box-label">Urdu Meaning</span>
+                    <p id="urdu-meaning" class="urdu-text">معنی</p>
+                </div>
+
+                <div class="data-box section-eng">
+                    <span class="box-label">English Definition</span>
+                    <p id="eng-definition">The lexical definition will show here.</p>
+                </div>
+
+                <div class="data-box section-usage" id="usage-box">
+                    <span class="box-label">Example Usage (Uses)</span>
+                    <p id="word-example">"This is how the word is used in a sentence."</p>
+                </div>
+            </div>
+
+            <div class="error-state" id="error-state">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <p id="error-msg">Could not find data for that word. Try another!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
